@@ -3,7 +3,8 @@ import React from 'react';
 class Form extends React.Component {
   state = {
     firstName: "John",
-    lastName: "Henry"
+    lastName: "Henry",
+    formData = []
   }
 
   // handleFirstNameChange = event => {
@@ -33,9 +34,13 @@ class Form extends React.Component {
     this.sendData(formData)
   }
 
-  sendData = formData => {
-    
+  sendData = formD => {
+
+    this.setState({
+      formData: formD
+    })
   }
+
   render() {
     return (
       <form onSubmit={this.onSubmit(event)}>
